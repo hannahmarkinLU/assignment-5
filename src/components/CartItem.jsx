@@ -1,21 +1,18 @@
 import React from "react";
 import "./CartItem.css";
 
-function CartItem({ item, onRemove }) {
+export default function CartItem({ item, removeItem }) {
   return (
     <div className="cart-item">
       <div className="cart-item-info">
         <p className="cart-item-name">{item.name}</p>
         <p className="cart-item-price">
-          ${item.price.toFixed(2)} × {item.quantity}
+          ${item.price} × {item.quantity}
         </p>
       </div>
-
-      <button className="remove-btn" onClick={() => onRemove(item.id)}>
+      <button className="remove-btn" onClick={() => removeItem(item)}>
         Remove
       </button>
     </div>
   );
 }
-
-export default CartItem;
