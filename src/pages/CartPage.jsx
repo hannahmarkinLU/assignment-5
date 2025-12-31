@@ -3,19 +3,16 @@ import CartItem from "../components/CartItem";
 
 function CartPage({ products, removeFromCart }) {
   return (
-    <main className="cart">
-      <h2 className="section-title">Shopping Cart</h2>
-
+    <div className="cart-page">
+      <h1>Your Shopping Cart</h1>
       {products.length === 0 ? (
-        <p className="empty-cart-message">Your cart is empty</p>
+        <p>Your cart is empty.</p>
       ) : (
-        <>
-          {products.map((item) => (
-            <CartItem key={item.id} item={item} onRemove={removeFromCart} />
-          ))}
-        </>
+        products.map((item) => (
+          <CartItem key={item.id} item={item} removeFromCart={removeFromCart} />
+        ))
       )}
-    </main>
+    </div>
   );
 }
 

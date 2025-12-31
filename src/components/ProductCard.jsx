@@ -1,14 +1,7 @@
 import React from "react";
 import "./ProductCard.css";
 
-export default function ProductCard({
-  id,
-  name,
-  price,
-  image,
-  description,
-  onAddToCart,
-}) {
+function ProductCard({ id, name, price, image, description, onAddToCart }) {
   return (
     <div className="product-card">
       <img className="product-image" src={image} alt={name} />
@@ -32,3 +25,5 @@ export default function ProductCard({
     </div>
   );
 }
+
+export default ProductCard;
